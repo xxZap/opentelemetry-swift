@@ -5,10 +5,12 @@ import PackageDescription
 
 let package = Package(
     name: "opentelemetry-swift",
-    platforms: [.macOS(.v10_13),
-                .iOS(.v11),
-                .tvOS(.v11),
-                .watchOS(.v3)],
+    platforms: [
+        .macOS(.v10_13),
+        .iOS(.v11),
+        .tvOS(.v11),
+        .watchOS(.v3)
+    ],
     products: [
         .library(name: "OpenTelemetryApi", type: .dynamic, targets: ["OpenTelemetryApi"]),
         .library(name: "libOpenTelemetryApi", type: .static, targets: ["OpenTelemetryApi"]),
@@ -35,11 +37,11 @@ let package = Package(
     ],
     dependencies: [
         .package(name: "Opentracing", url: "https://github.com/undefinedlabs/opentracing-objc", from: "0.5.2"),
-        .package(name: "Thrift", url: "https://github.com/undefinedlabs/Thrift-Swift", from: "1.1.1"),
-        .package(name: "swift-nio", url: "https://github.com/apple/swift-nio.git", from: "2.0.0"),
+        .package(name: "Thrift", url: "https://github.com/undefinedlabs/Thrift-Swift", from: "1.1.2"),
+        .package(name: "swift-nio", url: "https://github.com/apple/swift-nio.git", from: "2.40.0"),
         .package(name: "grpc-swift", url: "https://github.com/grpc/grpc-swift.git", .exact("1.0.0-alpha.12")),
-        .package(name: "SwiftProtobuf", url: "https://github.com/apple/swift-protobuf.git", from: "1.6.0"),
-        .package(name: "swift-atomics", url: "https://github.com/apple/swift-atomics.git", from: "0.0.1")
+        .package(name: "SwiftProtobuf", url: "https://github.com/apple/swift-protobuf.git", from: "1.29.0"),
+        .package(name: "swift-atomics", url: "https://github.com/apple/swift-atomics.git", from: "1.2.0")
     ],
     targets: [
         .target(name: "OpenTelemetryApi",
